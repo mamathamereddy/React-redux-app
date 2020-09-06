@@ -3,13 +3,28 @@ const router = express.Router ();
 const pool = require ('../database');
 
 
-router.get ('/', (request, response) => {
+router.get ('/', (req, res) => {
     pool.query ('SELECT * FROM products',(error, results, fields) =>{
         if (error) {
-          return response.send(error);
+          return res.send(error);
         }
-        response.json(results);
+        res.json(results);
       });
   });
 
-  module.exports = router;
+
+  router.get ('/:id', (req, res) => {
+    const id = request.params.id;
+    pool.query('SELECT * FROM products WHERE id = ?',[id],(error, results, fields) =>{
+        if (error) {
+          return res.send(error);
+        }
+        res.json(results);
+      });
+  });
+
+
+ 
+
+
+
