@@ -14,8 +14,8 @@ router.get ('/', (req, res) => {
 
 
   router.get ('/:id', (req, res) => {
-    const id = request.params.id;
-    pool.query('SELECT * FROM products WHERE id = ?',[id],(error, results, fields) =>{
+    const id = req.params.id
+    pool.query('select * from products WHERE id = ?',[id],(error, results, fields) =>{
         if (error) {
           return res.send(error);
         }
@@ -24,7 +24,16 @@ router.get ('/', (req, res) => {
   });
 
 
- 
+  router.get ('/search', (req, res) => {
+    const {query} = req.query;
+    pool.query(`SELECT * FROM products WHERE category = ?`,[query],(error, results, fields) =>{
+        if (error) {
+          return res.send(error);
+        }
+        res.json(results);
+      });
+  });
+  module.exports = router;
 
 
 
