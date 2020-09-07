@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Home() {
+function Navbar() {
     return (
         <header>
         <div className="overlay"></div>
@@ -17,4 +17,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Navbar
