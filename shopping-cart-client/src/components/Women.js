@@ -3,7 +3,7 @@ import React from 'react'
 function Women() {
     return (
         <div>
-            <h3>this is a page for women</h3>
+            <h3>this is a page for women special</h3>
         </div>
     )
 }
