@@ -8,7 +8,7 @@ export default(state=initialState,action)=>{
     switch(action.type){
         case GET_PRODUCTS:
             return{
-            data:action.data
+                productsList:action.data
         }
         default:
             return state;

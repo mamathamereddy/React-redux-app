@@ -14,9 +14,10 @@ const Navbar=(props)=> {
         <nav>
           <h2>Shopping cart</h2>
           <ul>
-          <li><a href="#">Men</a></li>
-          <li><a href="#">Women</a></li>
-          <li className="cart"><a href="#">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/men">Men</a></li>
+          <li><a href="/women">Women</a></li>
+          <li className="cart"><a href="/cart">
           <ion-icon name="basket-outline"></ion-icon>Cart <span>{props.basketProps.basketNumbers}</span></a></li>
           </ul>
         </nav>
