@@ -7,7 +7,8 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Men from "./components/Men";
-import Women from "./components/Women";
+import ProductsWithId from "./components/ProductsWithId"
+
 
 function App() {
   return (
@@ -17,11 +18,10 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/men" component={Men} />
-            <Route exact path="/women" component={Women} />
+            <Route exact path="/:slug" component={Men} />
+            <Route path="/:idSlug" component={ProductsWithId} />
             <Route path="/cart" component={Cart} />
           </Switch>
-          
         </BrowserRouter>
       </div>
     </Provider>

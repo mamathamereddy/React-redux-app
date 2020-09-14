@@ -16,7 +16,7 @@ const Home = ({ productsProps, getProducts, addToBasket }) => {
       {productsProps.productsList
         ? productsProps.productsList.map((product) => {
             return (
-              <div className="image">
+              <div className="image" key={product.id}>
               <Card
                 style={{
                   width: "15rem",

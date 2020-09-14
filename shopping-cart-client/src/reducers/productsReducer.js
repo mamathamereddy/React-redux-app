@@ -10,6 +10,10 @@ export default (state = initialState, action) => {
       return {
         productsList: action.data,
       };
+      case GET_PRODUCTS_WITHID:
+        return{
+          productID:action.productIDData
+        }
     default:
       return state;
   }
