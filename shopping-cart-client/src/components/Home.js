@@ -32,9 +32,9 @@ const Home = ({ productsProps, getProducts, addToBasket }) => {
                   height="150px"
                 />
                 <Card.Body>
-                <Card.Title><h4>{product.brand}</h4></Card.Title>
-                  <Card.Title><h3>{product.name}</h3></Card.Title> 
-                  <Card.Text><h4>{product.price} DKK</h4></Card.Text>
+                <Card.Title>{product.brand}</Card.Title>
+                  <Card.Title>{product.name}</Card.Title> 
+                  <Card.Text>{product.price} DKK</Card.Text>
                   <a onClick={addToBasket} className="addtocart cart1" href="#">
                     Add to cart
                   </a>

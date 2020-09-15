@@ -1,4 +1,4 @@
-import { GET_PRODUCTS } from "../actions/types";
+import { GET_PRODUCTS,GET_PRODUCTS_WITHID} from "../actions/types";
 
 const initialState = {
   productsList: [],
@@ -12,7 +12,7 @@ export default (state = initialState, action) => {
       };
       case GET_PRODUCTS_WITHID:
         return{
-          productID:action.productIDData
+          productID:action.data
         }
     default:
       return state;

@@ -1,7 +1,7 @@
 import {GET_PRODUCTS_WITHID} from './types';
 
-export const getProductId = () => {
-    console.log("Displaying products list");
+export const getProductId = (id) => {
+    console.log("Displaying products detailpage with id");
     return (dispatch) => {
       return fetch(`http://localhost:8080/api/products/${id}`)
         .then((res) => res.json())
