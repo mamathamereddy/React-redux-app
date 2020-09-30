@@ -22,7 +22,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/:slug" component={Men} />
-            <Route path="/search/:CategorySlug/" component={CatageoryList}></Route>
+            <Route path="/search/:CategorySlug" component={CatageoryList}></Route>
             <Route path="/products/:idSlug" component={ProductsWithId} />
             <Route path="/cart" component={Cart} />
           </Switch>
