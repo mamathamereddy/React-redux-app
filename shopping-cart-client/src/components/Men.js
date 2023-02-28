@@ -11,7 +11,7 @@ const Men = (props) => {
   const { getProducts, addToBasket } = props;
   const { productsList } = props.productsProps;
   const { slug } = useParams();
-  console.log(slug);
+  //console.log(slug);
   //console.log(productsList)
   useEffect(() => {
     getProducts();
@@ -20,7 +20,7 @@ const Men = (props) => {
   const mensProducts = productsList
     ? productsList.filter((item) => item.gender === slug)
     : null;
-  console.log(mensProducts);
+  //console.log(mensProducts);
   return (
     <Fade bottom cascade>
       <div className="container">

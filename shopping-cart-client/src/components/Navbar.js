@@ -4,7 +4,7 @@ import { getNumbers } from "../redux/actions/getAction";
 import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
-  console.log(props);
+  //console.log(props);
 
   useEffect(() => {
     getNumbers();

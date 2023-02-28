@@ -3,7 +3,7 @@ import searchAction from "../redux/actions/searchAction";
 import { connect } from "react-redux";
 
 const Search = (props) => {
-  console.log(props);
+  //console.log(props);
   return (
     <input
       type="text"

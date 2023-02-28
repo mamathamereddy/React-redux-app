@@ -8,7 +8,7 @@ import Fade from "react-reveal";
 import Button from "./Button";
 
 function CatageoryList(props) {
-  console.log(props);
+  //console.log(props);
 
   const { getCatageoryList, addToBasket } = props;
   const { categoryList } = props.productsProps;

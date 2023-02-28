@@ -7,7 +7,7 @@ import Button from "../components/Button";
 import "../App.css";
 
 const ProductsWithId = (props) => {
-  console.log(props);
+  //console.log(props);
 
   const { getProductId, addToBasket } = props;
   const { productID } = props.productsProps;
