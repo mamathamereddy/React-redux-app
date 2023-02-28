@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getNumbers } from "../actions/getAction";
-import {Link} from 'react-router-dom'
+import { getNumbers } from "../redux/actions/getAction";
+import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
   console.log(props);
@@ -16,13 +16,19 @@ const Navbar = (props) => {
         <h2>Shopping cart</h2>
         <ul>
           <li>
-            <Link to="/" className="NavLinks">Home</Link>
+            <Link to="/" className="NavLinks">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/men" className="NavLinks">Men</Link>
+            <Link to="/men" className="NavLinks">
+              Men
+            </Link>
           </li>
           <li>
-            <Link to="/women" className="NavLinks">Women</Link>
+            <Link to="/women" className="NavLinks">
+              Women
+            </Link>
           </li>
           <li className="cart">
             <Link to="/cart">

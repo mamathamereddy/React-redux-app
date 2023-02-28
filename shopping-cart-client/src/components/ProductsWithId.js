@@ -1,19 +1,19 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { addToBasket } from "../actions/addAction";
-import { getProductId } from "../actions/getProductId";
+import { addToBasket } from "../redux/actions/addAction";
+import { getProductId } from "../redux/actions/getProductId";
 import { useParams } from "react-router-dom";
-import Button from '../components/Button';
- import "../App.css";
+import Button from "../components/Button";
+import "../App.css";
 
 const ProductsWithId = (props) => {
-console.log(props)
+  console.log(props);
 
   const { getProductId, addToBasket } = props;
   const { productID } = props.productsProps;
   const { idSlug } = useParams();
-  console.log(idSlug)
-   console.log(productID)
+  console.log(idSlug);
+  console.log(productID);
 
   useEffect(() => {
     getProductId(idSlug);
@@ -37,11 +37,14 @@ console.log(props)
                   <li>{product.brand}</li>
                   <li>{product.description}</li>
                   <li>
-                  <Button type="button" onClick={addToBasket} text="Add to cart" className="cart"/>
+                    <Button
+                      type="button"
+                      onClick={addToBasket}
+                      text="Add to cart"
+                      className="cart"
+                    />
                   </li>
                 </ul>
-
-                
               </div>
             );
           })
@@ -58,4 +61,3 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, { addToBasket, getProductId })(
   ProductsWithId
 );
-
