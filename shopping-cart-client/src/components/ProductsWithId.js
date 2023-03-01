@@ -11,13 +11,18 @@ const ProductsWithId = (props) => {
 
   const { getProductId, addToBasket } = props;
   const { productID } = props.productsProps;
+  const { cartProducts } = props.basketProps;
   const { idSlug } = useParams();
   // console.log(idSlug);
   // console.log(productID);
 
   useEffect(() => {
     getProductId(idSlug);
-  }, [idSlug]);
+  }, [idSlug, getProductId]);
+
+  const handleClick = () => {
+    addToBasket(productID, cartProducts);
+  };
 
   return (
     <div>
@@ -39,7 +44,7 @@ const ProductsWithId = (props) => {
                   <li>
                     <Button
                       type="button"
-                      onClick={addToBasket}
+                      onClick={handleClick}
                       text="Add to cart"
                       className="cart"
                     />
@@ -56,6 +61,7 @@ const ProductsWithId = (props) => {
 
 const mapStateToProps = (state) => ({
   productsProps: state.productsState,
+  basketProps: state.basketState,
 });
 
 export default connect(mapStateToProps, { addToBasket, getProductId })(

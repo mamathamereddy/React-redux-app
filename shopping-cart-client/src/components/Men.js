@@ -11,11 +11,12 @@ const Men = (props) => {
   const { getProducts, addToBasket } = props;
   const { productsList } = props.productsProps;
   const { slug } = useParams();
+  const { cartProducts } = props.basketProps;
   //console.log(slug);
   //console.log(productsList)
   useEffect(() => {
     getProducts();
-  }, [getProducts]);
+  }, [slug]);
 
   const mensProducts = productsList
     ? productsList.filter((item) => item.gender === slug)
@@ -28,12 +29,10 @@ const Men = (props) => {
           ? mensProducts.map((product) => {
               return (
                 <div className="products_container">
-                  <Card products={product} />
-                  <Button
-                    type="button"
-                    onClick={addToBasket}
-                    text="Add to cart"
-                    className="cart"
+                  <Card
+                    products={product}
+                    addToBasket={addToBasket}
+                    cartProducts={cartProducts}
                   />
                 </div>
               );
@@ -46,5 +45,6 @@ const Men = (props) => {
 
 const mapStateToProps = (state) => ({
   productsProps: state.productsState,
+  basketProps: state.basketState,
 });
 export default connect(mapStateToProps, { getProducts, addToBasket })(Men);

@@ -12,14 +12,15 @@ function CatageoryList(props) {
 
   const { getCatageoryList, addToBasket } = props;
   const { categoryList } = props.productsProps;
-  console.log(categoryList);
+  //console.log(categoryList);
   const { CategorySlug, genderSlug } = useParams();
+  const { cartProducts } = props.basketProps;
   // console.log(CategorySlug);
   // console.log(genderSlug);
 
   useEffect(() => {
     getCatageoryList(CategorySlug, genderSlug);
-  }, [CategorySlug, getCatageoryList]);
+  }, [CategorySlug, genderSlug]);
 
   return (
     <Fade bottom cascade>
@@ -28,12 +29,10 @@ function CatageoryList(props) {
           ? categoryList.map((product) => {
               return (
                 <div className="products_container">
-                  <Card products={product} />
-                  <Button
-                    type="button"
-                    onClick={addToBasket}
-                    text="Add to cart"
-                    className="cart"
+                  <Card
+                    products={product}
+                    addToBasket={addToBasket}
+                    cartProducts={cartProducts}
                   />
                 </div>
               );
@@ -45,6 +44,7 @@ function CatageoryList(props) {
 }
 const mapStateToProps = (state) => ({
   productsProps: state.productsState,
+  basketProps: state.basketState,
 });
 
 export default connect(mapStateToProps, { addToBasket, getCatageoryList })(
