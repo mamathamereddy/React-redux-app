@@ -17,7 +17,12 @@ const Cart = ({ basketProps }) => {
           <div className="carts-header">Cart is empty</div>
         ) : (
           <div className="carts-header">
-            You have {cartProducts.length} items in the cart{" "}
+            You have{" "}
+            <span>
+              {cartProducts.length}
+              {""}
+            </span>{" "}
+            items in the cart{" "}
           </div>
         )}
         <h3>this is cart page</h3>

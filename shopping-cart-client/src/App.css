@@ -161,6 +161,9 @@ button {
 }
 
 /* cart css */
+.cart {
+  padding-left: 120px;
+}
 .carts-header {
   padding: 1rem;
   margin: 1rem;
@@ -168,8 +171,14 @@ button {
 }
 .carts-header {
   border-bottom: 0.1rem #c0c0c0 solid;
-
+  color: #deb634;
   justify-content: center;
+  font-weight: bold;
+}
+.carts-header span {
+  color: #deb634;
+
+  font-weight: bold;
 }
 .cart-items {
   padding: 0;
