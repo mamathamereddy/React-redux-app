@@ -21,8 +21,8 @@ function App() {
           <Route exact path="/:slug" component={Men} />
           <Route path="/search/:CategorySlug" component={CatageoryList}></Route>
           <Route path="/products/:idSlug" component={ProductsWithId} />
-          <Route path="/cart" component={Cart} />
         </Switch>
+        <Route path="/cart" component={Cart} />
       </BrowserRouter>
     </div>
   );
