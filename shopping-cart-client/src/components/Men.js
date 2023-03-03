@@ -5,7 +5,6 @@ import { getProducts } from "../redux/actions/getProducts";
 import { useParams } from "react-router-dom";
 import Card from "../components/Card";
 import Fade from "react-reveal";
-import Button from "./Button";
 
 const Men = (props) => {
   const { getProducts, addToBasket } = props;
@@ -16,7 +15,7 @@ const Men = (props) => {
   //console.log(productsList)
   useEffect(() => {
     getProducts();
-  }, [slug]);
+  }, [slug, getProducts]);
 
   const mensProducts = productsList
     ? productsList.filter((item) => item.gender === slug)

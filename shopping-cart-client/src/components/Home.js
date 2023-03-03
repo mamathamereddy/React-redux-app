@@ -14,15 +14,15 @@ const Home = ({ productsProps, getProducts, addToBasket, basketProps }) => {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [getProducts]);
 
   return (
     <Fade left cascade>
       <div className="container">
         {productsProps.productsList
-          ? productsProps.productsList.map((product) => {
+          ? productsProps.productsList.map((product, id) => {
               return (
-                <div className="products_container">
+                <div className="products_container" key={id}>
                   <Card
                     products={product}
                     addToBasket={addToBasket}

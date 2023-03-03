@@ -5,7 +5,7 @@ import { getCatageoryList } from "../redux/actions/getCatageoryList";
 import { addToBasket } from "../redux/actions/addAction";
 import Card from "../components/Card";
 import Fade from "react-reveal";
-import Button from "./Button";
+// import Button from "./Button";
 
 function CatageoryList(props) {
   //console.log(props);
@@ -20,7 +20,7 @@ function CatageoryList(props) {
 
   useEffect(() => {
     getCatageoryList(CategorySlug, genderSlug);
-  }, [CategorySlug, genderSlug]);
+  }, [CategorySlug, genderSlug, getCatageoryList]);
 
   return (
     <Fade bottom cascade>
