@@ -7,17 +7,17 @@ const Cart = ({ basketProps }) => {
   console.log(cartProducts);
 
   const formatCurrency = (num) => {
-    return "$" + Number(num && num.toFixed(1)).toLocaleString() + " ";
+    return Number(num && num.toFixed(1)).toLocaleString() + "Dkk ";
   };
 
   return (
     <>
       <div>
         {cartProducts.length === 0 ? (
-          <div className="cart cart-header">Cart is empty</div>
+          <div className="carts-header">Cart is empty</div>
         ) : (
-          <div className="cart cart-header">
-            You have {cartProducts.length} in the cart{" "}
+          <div className="carts-header">
+            You have {cartProducts.length} items in the cart{" "}
           </div>
         )}
         <h3>this is cart page</h3>
@@ -33,7 +33,9 @@ const Cart = ({ basketProps }) => {
                 <div>
                   <div>{item.name}</div>
                   <div className="right">
-                    {formatCurrency(item.price)} x {item.count}{" "}
+                    {formatCurrency(item.price)} x {item.count}
+                    {" ="}
+                    {formatCurrency(item.price * item.count)}
                     <button
                       className="button"
                       onClick={() => this.props.removeFromCart(item)}
