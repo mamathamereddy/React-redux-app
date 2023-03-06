@@ -14,7 +14,7 @@ const ProductsWithId = (props) => {
   const { cartProducts } = props.basketProps;
   const { idSlug } = useParams();
   // console.log(idSlug);
-  // console.log(productID);
+  console.log(productID);
 
   useEffect(() => {
     getProductId(idSlug);

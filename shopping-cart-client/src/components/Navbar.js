@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { getNumbers } from "../redux/actions/getAction";
 import { Link } from "react-router-dom";
 
-const Navbar = (props) => {
+const Navbar = ({ basketProps }) => {
   //console.log(props);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Navbar = (props) => {
           <li className="cart">
             <Link to="/cart">
               <ion-icon name="basket-outline"></ion-icon>Cart{" "}
-              <span>{props.basketProps.basketNumbers}</span>
+              <span>{basketProps.basketNumbers}</span>
             </Link>
           </li>
         </ul>
