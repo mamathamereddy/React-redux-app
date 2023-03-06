@@ -7,12 +7,13 @@ import Card from "../components/Card";
 import Fade from "react-reveal";
 
 const Men = (props) => {
+  console.log(props);
   const { getProducts, addToBasket } = props;
   const { productsList } = props.productsProps;
   const { slug } = useParams();
   const { cartProducts } = props.basketProps;
-  //console.log(slug);
-  //console.log(productsList)
+  // console.log(slug);
+  // console.log(productsList);
   useEffect(() => {
     getProducts();
   }, [slug, getProducts]);

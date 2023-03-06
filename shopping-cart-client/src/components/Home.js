@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-//import { Card } from "react-bootstrap";
 import { connect } from "react-redux";
 import { addToBasket } from "../redux/actions/addAction";
 import { getProducts } from "../redux/actions/getProducts";
@@ -9,7 +8,7 @@ import Card from "../components/Card";
 import "../App.css";
 
 const Home = ({ productsProps, getProducts, addToBasket, basketProps }) => {
-  //console.log(productsProps);
+  console.log(productsProps);
   const { cartProducts } = basketProps;
 
   useEffect(() => {
