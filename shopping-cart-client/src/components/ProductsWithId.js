@@ -21,7 +21,7 @@ const ProductsWithId = (props) => {
   }, [idSlug, getProductId]);
 
   const handleClick = () => {
-    addToBasket(productID, cartProducts);
+    addToBasket(productID[0], cartProducts);
   };
 
   return (
