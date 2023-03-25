@@ -30,7 +30,7 @@ export default (state = initialState, action) => {
         cartProducts: action.payload.cartItems,
         basketNumbers: state.basketNumbers + 1,
       };
-    case REMOVE_FROM_CART:
+
     case DECREASE_QUANTITY:
       return {
         ...state,

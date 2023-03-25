@@ -2,7 +2,7 @@ import { REMOVE_FROM_CART, DECREASE_QUANTITY } from "./types";
 
 export const removeFromCart = (product, cartProduct) => (dispatch) => {
   const cartItems = cartProduct.slice().filter((x) => x.id !== product.id);
-  const count = cartItems.reduce((acc, cur) => acc + cur.count, 0);
+  //const count = cartItems.reduce((acc, cur) => acc + cur.count, 0);
 
   dispatch({ type: REMOVE_FROM_CART, payload: { cartItems } });
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
